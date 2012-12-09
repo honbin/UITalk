@@ -29,6 +29,7 @@ class PostsController < ApplicationController
         redirect_to root_url, notice: 'post complete'
       else
         @posts = Post.recent(40)
+        @stock = Stock.new
         render :template => "posts/index", :locals => {:posts => @posts}
       end
     end
